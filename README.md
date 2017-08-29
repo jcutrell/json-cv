@@ -76,3 +76,52 @@ You may be wondering, "Where is my address?" - because the object represents a p
 Notice that the location is an array. The order of this array is not necessarily specific, as the most important ordering information will be found in the date ranges. This allows for overlapping locations (for example, if someone commuted between two locations during an overlap period). The only required fields for location are `city`, `state`, and `country`. The location objects are considered to be valid on their own without a `datePeriod`, however, for any reasonable system that generates a timeline, a `datePeriod` becomes imminently important.
 
 A given `datePeriod` object contains a "start" and "end" key, as well as a resolution identifier. (By default, all date resolutions should be parsed as "day"). If the end value is not identified, client systems should reasonably assume that the location identifier is continuous into the present time.
+
+```
+{
+  "personalData": {
+    // ...
+  },
+  "location": [
+    // ...
+  ],
+  "experience": [
+    {
+      "type": "education",
+      "institution": "Georgia Tech",
+      "title": "M.S. Digital Media",
+      "description": "Some description of what this experience was like and required.",
+      "datePeriod": {
+        //...
+      }
+    },
+    {
+      "type": "award",
+      "institution": "Georgia Tech",
+      "title": "Student of the Year",
+      "description": "Some description of what this experience was like and required.",
+      "datePeriod": {
+        //...
+        "start": "2013-01-01",
+        "end": "2013-12-01",
+        "resolution": "year"
+      }
+    },
+    {
+      "type": "work",
+      "institution": "Whiteboard",
+      "title": "CTO",
+      "description": "Some description of what this experience was like and required.",
+      "datePeriod": {
+        //...
+        "start": "2010-05-01",
+        "end": null,
+        "resolution": "month"
+      },
+      "meta": {
+        // user-defined fields for capturing additional information
+      }
+    }
+  ]
+}
+```
