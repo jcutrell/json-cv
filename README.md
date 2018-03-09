@@ -1,3 +1,6 @@
+# Seeking Contributors
+Due to other more important obligations, this project is on hold for the time being. I am open to contributions via pull requests, and suggestions via issues. If someone is interested in taking on this project as a maintainer, reach out at jonathan.cutrell@gmail.com - thanks!
+
 # json-cv
 A specification for the standardization of CV data using JSON format
 
